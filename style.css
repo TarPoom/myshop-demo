@@ -114,34 +114,54 @@ footer {
   font-size: 14px;
   margin-top: 30px;
 }
-/* ให้ modal ยืดเต็มจอมือถือ */
+/* ให้ modal เต็มจอในมือถือ + scroll ได้ */
 .cart-modal {
   position: fixed;
-  right: 0; bottom: 0; left: 0; top: 0;
+  top: 0; left: 0; right: 0; bottom: 0;
   width: 100%;
   max-width: 500px;
   margin: auto;
   background: #fff;
-  border-radius: 0; /* ไม่ต้องโค้งขอบ */
-  padding: 16px;
-  overflow-y: auto; /* ✅ เลื่อนใน modal ได้ */
+  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
   z-index: 1000;
   transform: translateY(100%);
   transition: .3s;
 }
+
 .cart-modal.show { transform: translateY(0); }
 
-/* สำหรับมือถือเล็ก */
-@media (max-width: 600px) {
-  .checkout-form input,
-  .checkout-form textarea {
-    font-size: 14px;
-    padding: 8px;
-  }
-  .checkout-btn {
-    padding: 10px;
-    font-size: 16px;
-  }
+/* เนื้อหา (เลื่อนภายใน) */
+.cart-items,
+.checkout-form {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
 }
+
+/* แถบสรุปรวมราคา + ปุ่ม ส่งคำสั่งซื้อ */
+.total-row,
+.checkout-btn {
+  position: sticky;
+  bottom: 0;
+  background: #fff;
+  z-index: 5;
+}
+
+/* ปุ่ม ส่งคำสั่งซื้อ ให้ชัดขึ้น */
+.checkout-btn {
+  width: 100%;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  padding: 14px;
+  border-radius: 0;
+  font-weight: bold;
+  cursor: pointer;
+}
+.checkout-btn:hover { background: #1e40af; }
+
 
 
