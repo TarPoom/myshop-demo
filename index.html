@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>My Shop Demo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Mali:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">🌸 My Shop</div>
+    <button class="cart-btn" id="openCart">🛒 <span id="cartCount">0</span></button>
+  </header>
+
+  <!-- Hero -->
+  <main>
+    <section class="hero">
+      <h1>ร้านค้า Demo</h1>
+      <p>เลือกสินค้า → ใส่ตะกร้า → กรอกข้อมูล → ส่งคำสั่งซื้อ</p>
+    </section>
+
+    <!-- Product Section -->
+    <section id="products" class="products">
+      <h2>สินค้าแนะนำ</h2>
+      <div id="productList" class="product-list"></div>
+    </section>
+  </main>
+
+  <!-- Cart Modal -->
+  <div class="cart-modal" id="cartModal" aria-hidden="true">
+    <div class="cart-header"><strong>ตะกร้าสินค้า</strong><button id="closeCart">✕</button></div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="total-row"><div>รวม</div><div id="totalPrice">฿0</div></div>
+
+    <!-- Checkout Form -->
+    <form id="checkoutForm" class="checkout-form">
+      <h3>ข้อมูลผู้สั่งซื้อ</h3>
+      <input type="text" id="name" placeholder="ชื่อ-นามสกุล" required>
+      <input type="email" id="email" placeholder="อีเมล" required>
+      <input type="text" id="address" placeholder="ที่อยู่จัดส่ง" required>
+      <input type="tel" id="phone" placeholder="เบอร์โทร" required>
+
+      <h3>วิธีการชำระเงิน</h3>
+      <label><input type="radio" name="payment" value="COD" checked> 💵 เก็บเงินปลายทาง</label><br>
+      <label><input type="radio" name="payment" value="Transfer"> 💳 โอนเงิน</label><br>
+      <label><input type="radio" name="payment" value="PromptPay"> 📱 พร้อมเพย์</label><br>
+
+      <textarea id="note" placeholder="รายละเอียดเพิ่มเติม (เช่น ฝากส่งตอนเย็น, ห่อของขวัญ ฯลฯ)"></textarea>
+
+      <button type="submit" class="checkout-btn">ส่งคำสั่งซื้อ</button>
+    </form>
+  </div>
+
+  <footer>
+  <p>© 2025 My Shop | Demo Project | 📞 094-313-0113 | 
+     ✉️ <a href="mailto:t.tar17223@gmail.com">t.tar17223@gmail.com</a></p>
+</footer>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
