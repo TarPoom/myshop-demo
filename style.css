@@ -114,3 +114,33 @@ footer {
   font-size: 14px;
   margin-top: 30px;
 }
+/* ให้ modal ยืดเต็มจอมือถือ */
+.cart-modal {
+  position: fixed;
+  right: 0; bottom: 0; left: 0; top: 0;
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+  background: #fff;
+  border-radius: 0; /* ไม่ต้องโค้งขอบ */
+  padding: 16px;
+  overflow-y: auto; /* ✅ เลื่อนใน modal ได้ */
+  z-index: 1000;
+  transform: translateY(100%);
+  transition: .3s;
+}
+.cart-modal.show { transform: translateY(0); }
+
+/* สำหรับมือถือเล็ก */
+@media (max-width: 600px) {
+  .checkout-form input,
+  .checkout-form textarea {
+    font-size: 14px;
+    padding: 8px;
+  }
+  .checkout-btn {
+    padding: 10px;
+    font-size: 16px;
+  }
+}
+
